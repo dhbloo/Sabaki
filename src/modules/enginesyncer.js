@@ -401,7 +401,8 @@ export default class EngineSyncer extends EventEmitter {
     }
 
     try {
-      await this.stateTracker.sync({komi, boardsize, history})
+      // Disable komi for Gomoku
+      await this.stateTracker.sync({komi: null, boardsize, history})
     } catch (err) {
       throw new Error(t('GTP engine can’t be synced to current state.'))
     }
