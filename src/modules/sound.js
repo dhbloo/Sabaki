@@ -30,6 +30,9 @@ export const playPachi = prepareFunction(
   [...Array(5)].map((_, i) => new Audio(`./data/${i}.mp3`))
 )
 
+/// Disable capture sound for Gomoku
+export const playCapture = () => {}
+/*
 export const playCapture = (() => {
   let f = prepareFunction(
     [...Array(5)].map((_, i) => new Audio(`./data/capture${i}.mp3`))
@@ -46,6 +49,7 @@ export const playCapture = (() => {
     await f(delay)
   }
 })()
+*/
 
 export const playPass = prepareFunction([new Audio('./data/pass.mp3')])
 

@@ -1,0 +1,40 @@
+diff --git a/node_modules/@sabaki/go-board/src/GoBoard.js b/node_modules/@sabaki/go-board/src/GoBoard.js
+index c56828b..1b03637 100644
+--- a/node_modules/@sabaki/go-board/src/GoBoard.js
++++ b/node_modules/@sabaki/go-board/src/GoBoard.js
+@@ -64,10 +64,14 @@ class GoBoard {
+ 
+         move.set(vertex, sign)
+ 
++        /// Disable Go features for Gomoku
++        
++        /*
+         // Remove captured stones
+ 
+         let neighbors = move.getNeighbors(vertex)
+         let deadStones = []
++        
+         let deadNeighbors = neighbors.filter(n => move.get(n) === -sign && !move.hasLiberties(n))
+ 
+         for (let n of deadNeighbors) {
+@@ -83,9 +87,9 @@ class GoBoard {
+         
+         let liberties = move.getLiberties(vertex)
+         let hasKo = deadStones.length === 1
+-            && liberties.length === 1
+-            && vertexEquals(liberties[0], deadStones[0])
+-            && neighbors.every(n => move.get(n) !== sign)
++        && liberties.length === 1
++        && vertexEquals(liberties[0], deadStones[0])
++        && neighbors.every(n => move.get(n) !== sign)
+         
+         move._koInfo = {
+             sign: hasKo ? -sign : 0,
+@@ -103,6 +107,7 @@ class GoBoard {
+                 move.set(c, 0).setCaptures(-sign, x => x + 1)
+             }
+         }
++        */
+         
+         return move
+     }
